@@ -114,6 +114,7 @@ void OneWayInPortProvider::put(const ::OpenRTM::CdrData& data)
 
   onReceived(m_cdr);
   m_connector->write(m_cdr);
+  onBufferWrite(m_cdr);
 
   return;
 }

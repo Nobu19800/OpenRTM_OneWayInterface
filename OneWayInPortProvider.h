@@ -33,6 +33,10 @@ private:
   {
     m_listeners->notifyIn(RTC::ConnectorDataListenerType::ON_RECEIVER_ERROR, m_profile, data);
   }
+  inline void onBufferWrite(RTC::ByteData& data)
+  {
+    m_listeners->notifyIn(RTC::ConnectorDataListenerType::ON_BUFFER_WRITE, m_profile, data);
+  }
 private:
   RTC::CdrBufferBase* m_buffer{nullptr};
   ::OpenRTM::InPortCdrUDP_var m_objref;
